@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background rectangle with curved top -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#000" /> <!-- Replace with your desired background color -->
+            <corners android:bottomLeftRadius="400dp" android:bottomRightRadius="400dp" />
+        </shape>
+    </item>
+</layer-list>

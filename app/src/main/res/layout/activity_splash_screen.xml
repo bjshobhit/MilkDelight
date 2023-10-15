@@ -13,72 +13,93 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:gravity="center"
         android:background="@color/color_theme">
+        <ImageView
+            android:id="@+id/transition_image"
+            android:layout_width="370dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="25dp"
+
+            />
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:foregroundGravity="center"
-        android:layout_marginTop="-100dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="700dp"
+        android:id="@+id/splash_layout"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-80dp"
+        android:layout_weight="1"
         android:background="@drawable/splash_shape"
-        >
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="70dp"
+            android:id="@+id/imageView3"
+            android:layout_width="85dp"
+            android:transitionName="image"
             android:layout_height="70dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:transitionName="textview1"
+            android:layout_marginTop="144dp"
+            android:layout_marginBottom="144dp"
             android:text="Quick delivery at your"
-            android:textStyle="bold"
             android:textColor="#000"
-
             android:textSize="30sp"
-            android:layout_gravity="center"/>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:transitionName="textview2"
             android:text="home address"
             android:textColor="#000"
-            android:textStyle="bold"
-
             android:textSize="30sp"
-            android:layout_gravity="center"/>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:background="#000"
             android:layout_gravity="end"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_marginTop="20dp"
-                />
+            android:layout_marginTop="152dp"
 
-            <ImageView
-                android:id="@+id/goto_singin"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/arrow" />
-
-
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
+            android:src="@drawable/splash_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.745"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

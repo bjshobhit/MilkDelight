@@ -8,42 +8,76 @@
     android:orientation="vertical"
     tools:context=".Sign_in">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:backgroundTint="@color/color_theme"
-        app:cardCornerRadius="40dp"
-        android:elevation="10dp"/>
+        android:background="@drawable/headerbkg"
+        android:elevation="10dp"
+        android:gravity="center">
+        <ImageView
+            android:transitionName="image"
+            android:id="@+id/imageView3"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="25dp"
+    />
+
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:background="#fff"
         app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="-80dp">
+        android:layout_marginTop="-70dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:padding="10dp"
             android:gravity="center_horizontal">
 
         <TextView
+            android:transitionName="textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OTP VERIFICATION"
+            android:text="Hey,Whats your number ?"
             android:textColor="#000"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            android:layout_weight="1"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:id="@+id/textview1"/>
+            <TextView
+                android:transitionName="textview2"
+                android:id="@+id/textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your number below to get OTP"
+                android:textSize="20sp"
+                android:layout_weight="1"
+               />
+            <TextView
+                android:transitionName="textview2"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Country Picker"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                />
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
                 android:hint="Enter Your Number"
+                android:layout_weight="1"
                 app:hintTextColor="#000"
 
                 style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
@@ -62,8 +96,11 @@
                 android:layout_height="55dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="@color/color_theme"
-                android:text="Get OTP"
-                android:textColor="#fff"/>
+                android:id="@+id/get_otp"
+                android:layout_weight="1"
+                android:text="Genrate OTP"
+                android:textColor="#fff"
+                android:transitionName="button"/>
 
 
 

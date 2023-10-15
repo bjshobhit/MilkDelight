@@ -7,21 +7,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/headerbkg"
+        android:elevation="10dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="25dp"
+            />
+
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:backgroundTint="@color/color_theme"
-        app:cardCornerRadius="20dp"
-        android:elevation="10dp"/>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#ggg"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="-80dp">
+        android:layout_marginTop="-70dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,138 +41,65 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:transitionName="textview1"
                 android:text="OTP VERIFICATION"
                 android:textColor="#000"
-                android:layout_marginTop="10dp"
                 android:textSize="35sp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-
-                android:text="Enter OTP"
-                android:textColor="#000"
-                android:textSize="25sp"
+                android:layout_weight="1"
+                android:text="Enter one time pass send to"
+                android:transitionName="textview2"
+                android:layout_marginTop="-20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp">
-
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-android:layout_width="0dp"
-android:layout_weight="1"
-android:layout_height="wrap_content"
-    style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-
-<com.google.android.material.textfield.TextInputEditText
-    android:id="@+id/otpField1"
-    android:background="@drawable/custom_border"
-    android:layout_width="40dp"
-    android:layout_height="wrap_content"
-    android:inputType="number"
-    android:maxLength="1"
-    android:nextFocusForward="@id/otpField2"
-
-    />
-</com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/otpField2"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"    android:background="@drawable/custom_border"
-            android:nextFocusForward="@id/otpField3"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/otpField3"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"    android:background="@drawable/custom_border"
-            android:nextFocusForward="@id/otpField4"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/otpField4"
-            android:layout_width="40dp"    android:background="@drawable/custom_border"
-            android:nextFocusForward="@id/otpField5"
-
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/otpField5"    android:background="@drawable/custom_border"
-
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"
-            android:nextFocusForward="@id/otpField6"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/otpField6"
-            android:background="@drawable/custom_border"
-
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="1"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+919917087145"
+                android:transitionName="textview2"
+                android:textSize="20sp"
+                android:layout_marginTop="-20dp"
+                android:textStyle="bold"/>
     <!-- Repeat the TextInputLayout and TextInputEditText for the other fields -->
 
+            <com.chaos.view.PinView
+                android:id="@+id/firstPinView"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:hint="Hint."
+                android:layout_weight="1"
+                android:inputType="text"
+                android:itemBackground="@drawable/custom_border"
+                android:layout_gravity="center"
+                android:textColor="@color/color_theme"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cursorColor="@color/color_theme"
+                app:cursorWidth="2dp"
+                app:hideLineWhenFilled="true"
+                app:itemCount="6"
+                app:itemHeight="48dp"
+                app:itemRadius="4dp"
+                app:itemSpacing="8dp"
+                app:itemWidth="48dp"
+                app:lineWidth="2dp"
+                app:viewType="rectangle" />
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_margin="20dp"
+                android:layout_height="30dp"
                 android:backgroundTint="@color/color_theme"
                 android:text="Verify"
-                android:textColor="#fff"/>
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:textColor="#fff"
+                android:id="@+id/goto_dashboard"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
