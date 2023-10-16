@@ -61,14 +61,17 @@
                 android:textSize="20sp"
                 android:layout_weight="1"
                />
-            <TextView
+            <com.hbb20.CountryCodePicker
                 android:transitionName="textview2"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Country Picker"
                 android:textSize="20sp"
                 android:layout_weight="1"
+                android:id="@+id/countryCodePicker"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_countryAutoDetectionPref="LOCALE_NETWORK"
+                app:ccp_countryPreference="IN"
                 />
 
 
@@ -86,6 +89,7 @@
                     android:layout_height="match_parent"
                     android:textColor="#000"
                     android:inputType="number"
+                    android:id="@+id/phonenumberforlogin"
                     />
 
 
@@ -107,6 +111,14 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progressbarofmain"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:visibility="invisible" />
 
 
 

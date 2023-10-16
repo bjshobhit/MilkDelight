@@ -1,5 +1,6 @@
 package com.codecrafters.kuchbhi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -12,6 +13,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.MemoryCacheSettings;
+import com.google.firebase.firestore.PersistentCacheSettings;
 
 public class Splash_screen extends AppCompatActivity {
 
@@ -32,18 +42,42 @@ public class Splash_screen extends AppCompatActivity {
         textView2.startAnimation(slideUpAnimation);
         imageView1.startAnimation(slideUpAnimation);
         imageView2.startAnimation(slideUpAnimation);
+
+        Pair[] pairs= new Pair[3];
+        pairs[0]=new Pair(imageView1,"image");
+        pairs[1]=new Pair(textView1,"textview1");
+        pairs[2]=new Pair(textView2,"textview2");
+
+        ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(Splash_screen.this,pairs);
+
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Splash_screen.this,Sign_in.class);
-                Pair[] pairs= new Pair[3];
-                pairs[0]=new Pair(imageView1,"image");
-                pairs[1]=new Pair(textView1,"textview1");
-                pairs[2]=new Pair(textView2,"textview2");
+                if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
+                    FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (documentSnapshot.exists()){
 
-                ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(Splash_screen.this,pairs);
-                startActivity(intent,options.toBundle());
-                finish();
+                                Intent intent= new Intent(Splash_screen.this,DashBoard.class);
+                                startActivity(intent,options.toBundle());
+                                finish();
+                            }
+                            else {
+                                Intent intent= new Intent(Splash_screen.this,Sign_in.class);
+                                startActivity(intent,options.toBundle());
+                                finish();
+                            }
+                        }
+                    });
+                }
+                else {
+                    Intent intent= new Intent(Splash_screen.this,Sign_in.class);
+                    startActivity(intent,options.toBundle());
+                    finish();
+                }
+
+
             }
         });
 

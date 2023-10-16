@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "552349861066",
+    "project_id": "milkdelight-bd03f",
+    "storage_bucket": "milkdelight-bd03f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552349861066:android:c32f14a2ddcb3bd685a033",
+        "android_client_info": {
+          "package_name": "com.codecrafters.kuchbhi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo0VoXLMPJr1MvE59Euq8HmQ_hMdnhC8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
